@@ -16,10 +16,21 @@ class Location
 
 class Person
 
+class AAUOC
+
 Event <|-- Conference
 Event <|-- BoardMeeting
 
 Person <|-- Member
 Member <|-- BoardMember
 
+Location - Event
+
+AAUOC o-- Location
+AAUOC o-- Event
+AAUOC o-- Person
+
+BoardMeeting - BoardMember
+
+Event - Member
 @enduml
