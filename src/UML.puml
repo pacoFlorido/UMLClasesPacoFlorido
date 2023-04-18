@@ -16,4 +16,7 @@ class Location
 
 class Person
 
+Event <|-- Conference
+Event <|-- BoardMeeting
+
 @enduml
