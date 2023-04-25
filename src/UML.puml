@@ -2,21 +2,32 @@
 
 !pragma layout smetana
 
-class Member
+class Member{
+e-mail: String
+}
 
 class BoardMember
 
 class Event{
+date: Date
+description: String
 assign(l : Location) : void
 }
 
-class Conference
+class Conference{
+max_attenders: Integer
+}
 
 class BoardMeeting
 
-class Location
+class Location{
+description: String
+address: String
+}
 
-class Person
+class Person{
+name: String
+}
 
 class AAUOC{
 newLocation(l : Location) : void
