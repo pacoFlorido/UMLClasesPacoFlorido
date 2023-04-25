@@ -3,30 +3,30 @@
 !pragma layout smetana
 
 class Member{
-e-mail: String
+e-mail : String
 }
 
 class BoardMember
 
 class Event{
-date: Date
-description: String
+date : Date
+description : String
 assign(l : Location) : void
 }
 
 class Conference{
-max_attenders: Integer
+max_attendees : Integer
 }
 
 class BoardMeeting
 
 class Location{
-description: String
-address: String
+description : String
+address : String
 }
 
 class Person{
-name: String
+name : String
 }
 
 class AAUOC{
@@ -43,14 +43,16 @@ Event <|-- BoardMeeting
 Person <|-- Member
 Member <|-- BoardMember
 
-Location - Event
+Location "1" -  "0..*"Event: isLocated_in
 
-AAUOC o-- Location
-AAUOC o-- Event
-AAUOC o-- Person
+AAUOC o-- "0..*"Location
+AAUOC o-- "0..*"Event
+AAUOC o-- "0..*"Person
 
-BoardMeeting - BoardMember
+BoardMeeting"0..*" - "0..*"BoardMember: attends_to
 
-Event - Member
+Event "0..*" - "0..*"Member: attends_to
+
+Conference"0..*" --- "0..*"Person: attends_to
 
 @enduml
